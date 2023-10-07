@@ -1,0 +1,355 @@
+{
+  "stations": [
+    {
+      "station-1": {
+        "st_name": "Uttara north",
+        "destination": [
+          {
+            "des_st": "Uttara center",
+            "fair": 20
+          },
+          {
+            "des_st": "Uttara south",
+            "fair": 20
+          },
+          {
+            "des_st": "Pallabi",
+            "fair": 30
+          },
+          {
+            "des_st": "Mirpur-11",
+            "fair": 30
+          },
+          {
+            "des_st": "Mirpur-10",
+            "fair": 40
+          },
+          {
+            "des_st": "Kazipara",
+            "fair": 40
+          },
+          {
+            "des_st": "Shewrapara",
+            "fair": 50
+          },
+          {
+            "des_st": "Agargaon",
+            "fair": 60
+          }
+        ]
+      }
+    },
+  {
+    "station-2": {
+      "st_name": "Uttara center",
+      "destination": [
+        {
+          "des_st": "Uttara north",
+          "fair": 20
+        },
+        {
+          "des_st": "Uttara south",
+          "fair": 20
+        },
+        {
+          "des_st": "Pallabi",
+          "fair": 20
+        },
+        {
+          "des_st": "Mirpur-11",
+          "fair": 30
+        },
+        {
+          "des_st": "Mirpur-10",
+          "fair": 30
+        },
+        {
+          "des_st": "Kazipara",
+          "fair": 40
+        },
+        {
+          "des_st": "Shewrapara",
+          "fair": 40
+        },
+        {
+          "des_st": "Agargaon",
+          "fair": 50
+        }
+      ]
+    }
+  },
+  {
+    "station-3": {
+      "st_name": "Uttara south",
+      "destination": [
+        {
+          "des_st": "Uttara north",
+          "fair": 20
+        },
+        {
+          "des_st": "Uttara south",
+          "fair": 20
+        },
+        {
+          "des_st": "Pallabi",
+          "fair": 20
+        },
+        {
+          "des_st": "Mirpur-11",
+          "fair": 20
+        },
+        {
+          "des_st": "Mirpur-10",
+          "fair": 30
+        },
+        {
+          "des_st": "Kazipara",
+          "fair": 30
+        },
+        {
+          "des_st": "Shewrapara",
+          "fair": 40
+        },
+        {
+          "des_st": "Agargaon",
+          "fair": 40
+        }
+      ]
+    }
+  },
+  {
+    "station-4": {
+      "st_name": "Pallabi",
+      "destination": [
+        {
+          "des_st": "Uttara north",
+          "fair": 20
+        },
+        {
+          "des_st": "Uttara south",
+          "fair": 20
+        },
+        {
+          "des_st": "Pallabi",
+          "fair": 20
+        },
+        {
+          "des_st": "Mirpur-11",
+          "fair": 20
+        },
+        {
+          "des_st": "Mirpur-10",
+          "fair": 30
+        },
+        {
+          "des_st": "Kazipara",
+          "fair": 30
+        },
+        {
+          "des_st": "Shewrapara",
+          "fair": 40
+        },
+        {
+          "des_st": "Agargaon",
+          "fair": 40
+        }
+      ]
+    }
+  },
+  {
+    "station-5": {
+      "st_name": "Mirpur-11",
+      "destination": [
+        {
+          "des_st": "Uttara north",
+          "fair": 30
+        },
+        {
+          "des_st": "Uttara center",
+          "fair": 30
+        },
+        {
+          "des_st": "Uttara south",
+          "fair": 20
+        },
+        {
+          "des_st": "Pallabi",
+          "fair": 20
+        },
+        {
+          "des_st": "Mirpur-10",
+          "fair": 20
+        },
+        {
+          "des_st": "Kazipara",
+          "fair": 20
+        },
+        {
+          "des_st": "Shewrapara",
+          "fair": 20
+        },
+        {
+          "des_st": "Agargaon",
+          "fair": 30
+        }
+      ]
+    }
+  },
+  {
+    "station-6": {
+      "st_name": "Mirpur-10",
+      "destination": [
+        {
+          "des_st": "Uttara north",
+          "fair": 40
+        },
+        {
+          "des_st": "Uttara center",
+          "fair": 30
+        },
+        {
+          "des_st": "Uttara south",
+          "fair": 30
+        },
+        {
+          "des_st": "Pallabi",
+          "fair": 20
+        },
+        {
+          "des_st": "Mirpur-11",
+          "fair": 20
+        },
+        {
+          "des_st": "Kazipara",
+          "fair": 20
+        },
+        {
+          "des_st": "Shewrapara",
+          "fair": 20
+        },
+        {
+          "des_st": "Agargaon",
+          "fair": 20
+        }
+      ]
+    }
+  },
+  {
+    "station-7": {
+      "st_name": "Kazipara",
+      "destination": [
+        {
+          "des_st": "Uttara north",
+          "fair": 40
+        },
+        {
+          "des_st": "Uttara center",
+          "fair": 40
+        },
+        {
+          "des_st": "Uttara south",
+          "fair": 30
+        },
+        {
+          "des_st": "Pallabi",
+          "fair": 20
+        },
+        {
+          "des_st": "Mirpur-11",
+          "fair": 20
+        },
+        {
+          "des_st": "Mirpur-10",
+          "fair": 20
+        },
+        {
+          "des_st": "Shewrapara",
+          "fair": 20
+        },
+        {
+          "des_st": "Agargaon",
+          "fair": 20
+        }
+      ]
+    }
+  },
+  {
+    "station-8": {
+      "st_name": "Shewrapara",
+      "destination": [
+        {
+          "des_st": "Uttara north",
+          "fair": 50
+        },
+        {
+          "des_st": "Uttara center",
+          "fair": 40
+        },
+        {
+          "des_st": "Uttara south",
+          "fair": 40
+        },
+        {
+          "des_st": "Pallabi",
+          "fair": 30
+        },
+        {
+          "des_st": "Mirpur-11",
+          "fair": 20
+        },
+        {
+          "des_st": "Mirpur-10",
+          "fair": 20
+        },
+        {
+          "des_st": "Kazipara",
+          "fair": 20
+        },
+        {
+          "des_st": "Agargaon",
+          "fair": 20
+        }
+      ]
+    }
+  },
+  {
+    "station-9": {
+      "st_name": "Agargaon",
+      "destination": [
+        {
+          "des_st": "Uttara north",
+          "fair": 60
+        },
+        {
+          "des_st": "Uttara center",
+          "fair": 50
+        },
+        {
+          "des_st": "Uttara south",
+          "fair": 40
+        },
+        {
+          "des_st": "Pallabi",
+          "fair": 30
+        },
+        {
+          "des_st": "Mirpur-11",
+          "fair": 30
+        },
+        {
+          "des_st": "Mirpur-10",
+          "fair": 20
+        },
+        {
+          "des_st": "Kazipara",
+          "fair": 20
+        },
+        {
+          "des_st": "Shewrapara",
+          "fair": 20
+        }
+      ]
+    }
+  }
+ ]
+}

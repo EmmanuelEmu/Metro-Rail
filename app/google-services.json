@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "18143371756",
+    "firebase_url": "https://metro-rail-bd-default-rtdb.firebaseio.com",
+    "project_id": "metro-rail-bd",
+    "storage_bucket": "metro-rail-bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:18143371756:android:e80e4cf47e7d0ab16b20c9",
+        "android_client_info": {
+          "package_name": "com.example.metrorail"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "18143371756-ih09v5mhphfdmr9ngqftmnrqes8gv256.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXAnZqX09bpSeQyijPIrTn1ZYvL_its54"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "18143371756-ih09v5mhphfdmr9ngqftmnrqes8gv256.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Metro Rail</string>
+    <string name="register">Register</string>
+    <string name="forgot_password_text">forgot password?</string>
+    <string name="email">email</string>
+    <string name="submit">Login</string>
+    <string name="password">password</string>
+    <string name="don_t_have_a_account">Don\'t have a account?</string>
+    <string name="nav_drawer_open">Open the navigation drawer</string>
+    <string name="nav_drawer_close">Close the navigation drawer</string>
+
+
+    <string-array name="source">
+        <item>Select Departure point</item>
+        <item>Uttara north</item>
+        <item>Uttara center</item>
+        <item>Uttara south</item>
+        <item>Pallabi</item>
+        <item>Mirpur-11</item>
+        <item>Mirpur-10</item>
+        <item>Kazipara</item>
+        <item>Shewrapara</item>
+        <item>Agargaon</item>
+    </string-array>
+
+    <string-array name="destination">
+        <item>Select Destination point</item>
+        <item>Uttara north</item>
+        <item>Uttara center</item>
+        <item>Uttara south</item>
+        <item>Pallabi</item>
+        <item>Mirpur-11</item>
+        <item>Mirpur-10</item>
+        <item>Kazipara</item>
+        <item>Shewrapara</item>
+        <item>Agargaon</item>
+    </string-array>
+</resources>
