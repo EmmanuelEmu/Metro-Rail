@@ -50,7 +50,7 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
     Toolbar toolbar;
     int year, month, day;
     Button searchButton;
-    String sourceStation, DestinationStation, DOJourney;
+    String sourceStation, DestinationStation, DOJourney, selectedItem1, selectedItem2;
     EditText journeyDate,JD;
     Spinner spinner_source, spinner_destination;
 
@@ -119,9 +119,9 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 // Handle the selected item here
-                String selectedItem1 = parentView.getItemAtPosition(position).toString();
+                selectedItem1 = parentView.getItemAtPosition(position).toString();
                 sourceStation = selectedItem1;
-                //Toast.makeText(getApplicationContext(), "Selected: " + selectedItem, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "Selected: " + selectedItem1, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -146,9 +146,9 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 // Handle the selected item here
-                String selectedItem2 = parentView.getItemAtPosition(position).toString();
+                selectedItem2 = parentView.getItemAtPosition(position).toString();
                 DestinationStation = selectedItem2;
-                //Toast.makeText(getApplicationContext(), "Selected: " + selectedItem, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "Selected: " + selectedItem2, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -162,7 +162,7 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
         //Adding calender for select journey date
 
         journeyDate = findViewById(R.id.journeyDate);
-        final Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance();
         journeyDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -172,8 +172,8 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
 
                 DatePickerDialog datePickerDialog = new DatePickerDialog(home.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
-                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        journeyDate.setText(SimpleDateFormat.getDateInstance().format(calendar.getTime()));
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        journeyDate.setText(String.valueOf(day)+"/"+String.valueOf(month)+"/"+String.valueOf(year));
                     }
                 },year,month,day);
                 datePickerDialog.show();
@@ -181,8 +181,7 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
         });
 
         //Getting the journey date in String format
-        JD = findViewById(R.id.journeyDate);
-        DOJourney = String.valueOf(JD.getText());
+
 
 
 
@@ -224,17 +223,23 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
 //                    }
 //                });
 //
-                if(sourceStation == "Select Departure point"){
+                System.out.println(selectedItem1);
+                System.out.println(selectedItem2);
+                String msg1 = "Select Departure point";
+                String msg2 = "Select Destination point";
+                if(sourceStation.equals(msg1)){
                     Toast.makeText(home.this, "Please select Departure point", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if(sourceStation == "Select Destination point"){
+                if(DestinationStation.equals(msg2)){
                     Toast.makeText(home.this, "Please select Destination point", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
 
+                JD = findViewById(R.id.journeyDate);
+                DOJourney = String.valueOf(JD.getText());
 
                 Intent intent = new Intent(getApplicationContext(), journey_purchase.class);
                 intent.putExtra("sourceStation", sourceStation);
@@ -246,64 +251,6 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
             }
         });
 
-
-
-        String jsonData = null;
-
-        try {
-            // Open the JSON file from the assets folder
-            InputStream inputStream = getAssets().open("data.json");
-
-            // Create a BufferedReader to read the JSON file
-            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-
-            StringBuilder stringBuilder = new StringBuilder();
-            String line;
-
-            // Read each line of the JSON file and append it to the StringBuilder
-            while ((line = reader.readLine()) != null) {
-                stringBuilder.append(line);
-            }
-
-            // Close the reader
-            reader.close();
-
-            // Convert the JSON data to a string
-            jsonData = stringBuilder.toString();
-            System.out.println(jsonData);
-            // Now, jsonData contains the JSON content as a string
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            // Parse the JSON data into a JSONObject
-            JSONObject jsonObject = new JSONObject(jsonData);
-            JSONArray jsonArray  = jsonObject.getJSONArray("stations");
-
-//            HashMap<String, String> list  = new HashMap<>();
-//            ArrayList< HashMap<String, String>> arrayList = new ArrayList<>();
-            Queue<String> stations = new LinkedList<>();
-
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject obj = jsonArray.getJSONObject(i);
-                JSONObject stationNumber = obj.getJSONObject("station-"+(i+1));
-                String stationName = stationNumber.getString("st_name");
-                stations.offer(stationName);
-//                list.put("station number","station"+(i+1));
-//                list.put("station Name", stationName);
-//                arrayList.add(list);
-                
-            }
-//            System.out.println(arrayList);
-//            System.out.println(list);
-//            System.out.println(arrayList.get(0).get("station Name"));
-            System.out.println(stations.peek());
-
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 
 
     }

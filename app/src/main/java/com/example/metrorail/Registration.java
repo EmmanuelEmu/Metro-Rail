@@ -46,6 +46,7 @@ public class Registration extends AppCompatActivity {
     EditText mobileNo, NID, dob, email_text, password_text,fName,lName;
     ProgressBar progressBar;
     FirebaseAuth mAuth;
+    String userID;
 
 
 
@@ -79,8 +80,8 @@ public class Registration extends AppCompatActivity {
 
                 DatePickerDialog datePickerDialog = new DatePickerDialog(Registration.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
-                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        DOB.setText(SimpleDateFormat.getDateInstance().format(calendar.getTime()));
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        DOB.setText(String.valueOf(day)+"/"+String.valueOf(month)+"/"+String.valueOf(year));
                     }
                 },year,month,day);
                 datePickerDialog.show();
@@ -286,6 +287,7 @@ public class Registration extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
                                     FirebaseUser user = mAuth.getCurrentUser();
+                                    userID = user.getUid();
 
                                     //Saving the data to the realtime database in firebase
                                     ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(firstName, lastName, nid, hbd, email, phone);
@@ -303,7 +305,7 @@ public class Registration extends AppCompatActivity {
                                             }
                                         }
                                     });
-//
+
 //                                    progressBar.setVisibility(View.GONE);
 //                                    Toast.makeText(Registration.this, "Registration successful.",
 //                                            Toast.LENGTH_SHORT).show();
@@ -319,6 +321,29 @@ public class Registration extends AppCompatActivity {
                                 }
                             }
                         });
+
+
+
+//                ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(firstName, lastName, nid, hbd, email, phone);
+//                DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Registered User");
+//                referenceProfile.child(userID).setValue(writeUserDetails).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Void> task) {
+//                        if (task.isSuccessful()){
+////                            progressBar.setVisibility(View.GONE);
+////                            Toast.makeText(Registration.this, "Registration successful.", Toast.LENGTH_SHORT).show();
+////                            Intent intent = new Intent(Registration.this, home.class);
+////                            startActivity(intent);
+//                            Toast.makeText(Registration.this, "Data saved successful.", Toast.LENGTH_SHORT).show();
+//                        }else{
+////                            Toast.makeText(Registration.this, "Registration failed.", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(Registration.this, "Data saved failed.", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                });
+
+
+
             }
         });
 

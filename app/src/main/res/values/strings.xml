@@ -35,4 +35,5 @@
         <item>Shewrapara</item>
         <item>Agargaon</item>
     </string-array>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>
