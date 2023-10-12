@@ -16,4 +16,197 @@
         android:theme="?attr/actionBarTheme"
         app:titleTextColor="@color/white" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/timeInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Select jouney time"
+        app:startIconDrawable="@drawable/baseline_access_time_24"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/timeInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="false"
+            android:inputType="time"
+            android:hint="hint" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!--    number of passenger layout-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical">
+
+
+        <TextView
+            android:id="@+id/numberOfPassenger"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/backgroundbox"
+            android:drawableStart="@drawable/baseline_person_24"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/incrementPassenger"
+            android:layout_width="56dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:text="+"
+            android:textSize="20dp"
+            app:cornerRadius="100dp" />
+
+        <Button
+            android:id="@+id/decrementPassenger"
+            android:layout_width="56dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:text="-"
+            android:textSize="20dp"
+            app:cornerRadius="100dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical">
+
+
+        <TableLayout
+            android:layout_width="296dp"
+            android:layout_height="match_parent"
+            android:background="#3F51B5">
+
+            <TableRow
+                android:layout_marginTop="20dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp">
+
+                <TextView
+                    android:layout_width="78dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="From"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="78dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="To"
+                    android:textColor="@color/white" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/sourceStation"
+                    android:layout_width="78dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="SOURCE "
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/arrow" />
+
+                <TextView
+                    android:id="@+id/destinationStation"
+                    android:layout_width="78dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="DESTINATION"
+                    android:textColor="@color/white" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="40dp">
+
+                <TextView
+                    android:id="@+id/showJourneyTime"
+                    android:layout_width="78dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/showJourneyDate"
+                    android:layout_width="78dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/white" />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/totalFair"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/backgroundbox"
+            android:text="Hola"
+            android:textColor="@color/blue"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/purchaseBtn"
+        android:layout_width="233dp"
+        android:layout_height="85dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:text="Purchase" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/webLayout">
+
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/payWebView"/>
+
+    </LinearLayout>
+
+
 </LinearLayout>

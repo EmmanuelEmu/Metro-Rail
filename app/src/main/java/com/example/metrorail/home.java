@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
@@ -56,6 +57,7 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
 
 
 
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +70,7 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
         searchButton = findViewById(R.id.searchBtn);
+
 
 
 
@@ -241,10 +244,15 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
                 JD = findViewById(R.id.journeyDate);
                 DOJourney = String.valueOf(JD.getText());
 
+
+                Intent getEmail = getIntent();
+                String emailData = getEmail.getStringExtra("email");
+
                 Intent intent = new Intent(getApplicationContext(), journey_purchase.class);
                 intent.putExtra("sourceStation", sourceStation);
                 intent.putExtra("DestinationStation", DestinationStation);
                 intent.putExtra("Journey Date", DOJourney);
+                intent.putExtra("email", emailData);
                 startActivity(intent);
 
 
@@ -272,6 +280,13 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
             Intent intent = new Intent(getApplicationContext(), login.class);
             startActivity(intent);
             finish();
+        }
+        if (item.getItemId() == R.id.nav_rate){
+            rate_us_dialouge rateUs = new rate_us_dialouge(home.this);
+            rateUs.getWindow().setBackgroundDrawable(new ColorDrawable(getResources().getColor(android.R.color.transparent,getTheme())));
+            rateUs.setCancelable(false);
+            rateUs.show();
+
         }
         return true;
     }

@@ -23,7 +23,9 @@
         android:theme="@style/Theme.MetroRail"
         android:windowLayoutInDisplayCutoutMode="shortEdges"
         tools:targetApi="31">
-
+        <activity
+            android:name=".rate_us_dialouge"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 

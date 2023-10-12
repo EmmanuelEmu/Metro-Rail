@@ -18,7 +18,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent getDate = getIntent();
+        String email = getDate.getStringExtra("email");
+
         Intent intent = new Intent(getApplicationContext(), home.class);
+        intent.putExtra("email", email);
         startActivity(intent);
 
 //        signOut = findViewById(R.id.signOut);
