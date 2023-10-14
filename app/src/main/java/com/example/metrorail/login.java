@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -22,7 +23,7 @@ import com.google.firebase.ktx.Firebase;
 
 public class login extends AppCompatActivity {
 
-    TextView regBtn;
+    TextView regBtn, forgotButton;
     EditText email_Text, password_Text;
     Button submitBtn;
     FirebaseAuth mAuth;
@@ -48,8 +49,21 @@ public class login extends AppCompatActivity {
         password_Text = findViewById(R.id.password);
         submitBtn = findViewById(R.id.submit_button);
         regBtn = findViewById(R.id.Register);
+        forgotButton = findViewById(R.id.forgotbtn);
         mAuth = FirebaseAuth.getInstance();
 
+
+        //Initially hide the password
+        password_Text.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+
+
+        forgotButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), resetPassword.class);
+                startActivity(intent);
+            }
+        });
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override

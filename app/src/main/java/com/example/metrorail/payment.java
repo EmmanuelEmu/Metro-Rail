@@ -80,9 +80,7 @@ public class payment extends AppCompatActivity {
         userAmount = intent.getStringExtra("amount");
 
 
-        paymentBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+
 
                 layout.setVisibility(View.GONE);
                 webLayout.setVisibility(View.VISIBLE);
@@ -164,6 +162,5 @@ public class payment extends AppCompatActivity {
                 UddoktaPay uddoktapay = new UddoktaPay(paymentView, paymentCallback);
                 uddoktapay.loadPaymentForm(API_KEY, userFullName, userEmail, userAmount, CHECKOUT_URL, VERIFY_PAYMENT_URL, REDIRECT_URL, CANCEL_URL, metadataMap);
             }
-        });
-    }
+
 }
